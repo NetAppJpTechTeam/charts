@@ -17,7 +17,7 @@ Master:
   Component: "jenkins-master"
   UseSecurity: true
   AdminUser: admin
-  # AdminPassword: <defaults to random>
+  AdminPassword: Netapp123!
   Cpu: "200m"
   Memory: "256Mi"
   # Environment variables that get added to the init container (useful for e.g. http_proxy)
@@ -82,6 +82,8 @@ Master:
     - workflow-job:2.15
     - credentials-binding:1.13
     - git:3.6.4
+    - google-oauth-plugin:0.8 
+    
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   # ScriptApproval:
   #   - "method groovy.json.JsonSlurperClassic parseText java.lang.String"
